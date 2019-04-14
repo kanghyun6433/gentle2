@@ -3,7 +3,7 @@ import asyncio
 import datetime
 from requests import *
 import random
-import os
+
  
 client = discord.Client()
 
@@ -63,6 +63,18 @@ async def on_message(message):
 
     if message.content.startswith('뤼-도와줘'):
         await client.send_message(message.channel, '뤼-운세,뤼-골라,뤼-오늘,뤼-말해,뤼-정보,뤼-play,뤼-queue,뤼-skip.뤼-np,뤼-perms')
+         
+         
+    if message.content.startswith('뤼-기야'):
+        await client.send_message(message.channel, '오뻔 싸이!야!..하ㅏ하하하하하하하')
 
-access_token = os.environ["BOT_TOKEN"]
-client.run(access_token)
+    if message.content.startswith('뤼-호성'):
+        embed = discord.Embed(title="나랑께", description="", color=0xFF0000)
+        embed.set_footer(text = "하하하하하하하하하하하")
+        embed.set_image(url="https://pbs.twimg.com/profile_images/1266715535/_________400x400.jpg")
+        await client.send_message(message.channel, embed=embed)
+
+
+
+
+client.run('NTY2NDIyMjUzODI3MzkxNDk4.XLGnqg.SDAg3rSv7HPAkfrqE8LlqSiNrto')
