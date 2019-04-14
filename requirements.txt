@@ -1,4 +1,4 @@
 discord.py==0.16.12
 DateTime==4.3
-asynico==3.4.3
+asyncio==3.4.3
 requests==2.21.0
