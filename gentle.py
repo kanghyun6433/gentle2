@@ -3,6 +3,7 @@ import asyncio
 import datetime
 from requests import *
 import random
+import os
  
 client = discord.Client()
 
@@ -63,5 +64,5 @@ async def on_message(message):
     if message.content.startswith('뤼-도와줘'):
         await client.send_message(message.channel, '뤼-운세,뤼-골라,뤼-오늘,뤼-말해,뤼-정보,뤼-play,뤼-queue,뤼-skip.뤼-np,뤼-perms')
 
-    
-client.run('NTY2NDIyMjUzODI3MzkxNDk4.XLGnqg.SDAg3rSv7HPAkfrqE8LlqSiNrto')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
