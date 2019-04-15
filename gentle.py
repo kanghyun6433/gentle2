@@ -70,11 +70,28 @@ async def on_message(message):
 
     if message.content.startswith('뤼-호성'):
         embed = discord.Embed(title="나랑께", description="", color=0xFF0000)
-        embed.set_footer(text = "하하하하하하하하하하하")
+        embed.set_footer(text = " ")
         embed.set_image(url="https://pbs.twimg.com/profile_images/1266715535/_________400x400.jpg")
         await client.send_message(message.channel, embed=embed)
 
+    if message.content.startswith('뤼-섹스'):
+        await client.send_message(message.channel, '개변태새끼')
 
+    if message.content.startswith('뤼-노무현'):
+        await client.send_message(message.channel, '일배새끼')
 
+    if message.content.startswith('뤼-ㅇㅇㄱㅇㄴ'):
+        await client.send_message(message.channel, '섹스하자') 
 
+    if message.content.startswith('뤼-cldgonz'):
+        embed = discord.Embed(title="구르미르님", description="https://www.youtube.com/channel/UCZh8J1a9eOoXdtwmbufUM-Q", color=0xFF0000)
+        embed.set_footer(text = "젠틀맨의 시초")
+        await client.send_message(message.channel, embed=embed)
+
+    if message.content.startswith('뤼-야수선배'):
+        await client.send_message(message.channel, '응앗-! (≧Д≦)') 
+
+    
+
+    
 client.run('NTY2NDIyMjUzODI3MzkxNDk4.XLGnqg.SDAg3rSv7HPAkfrqE8LlqSiNrto')
