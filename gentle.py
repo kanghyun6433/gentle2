@@ -149,12 +149,6 @@ async def on_message(message):
         embed.set_image(url="https://yt3.ggpht.com/a-/AAuE7mBuu8G1iQ--Se6PABtOaVf2VB2TylkzJtq8tw=s288-mo-c-c0xffffffff-rj-k-no")
         await client.send_message(message.channel, embed=embed)
 
-    if message.content.startswith('뤼-대왕세종'):
-        embed = discord.Embed(title="머앟세종", description="", color=0xFF0000)
-        embed.set_footer(text = "영상개잘함...")
-        embed.set_image(url="https://yt3.ggpht.com/a-/AAuE7mCXSx8KjyIaCoAxywSqTXl2GS9U2aszPoNWIw=s288-mo-c-c0xffffffff-rj-k-no")
-        await client.send_message(message.channel, embed=embed)
-
     if message.content.startswith('뤼-slp'):
         embed = discord.Embed(title="slp", description="", color=0xFF0000)
         embed.set_footer(text = "실력이 느는게 보입니다! 힘내요!")
@@ -170,13 +164,17 @@ async def on_message(message):
     if message.content.startswith('뤼-샌즈'):
         await client.send_message(message.channel, '젠젠젠젠젠젠젠젠젠젠젠...젠젠..젠젠')
 
-    if message.content.startswith('뤼-샌즈'):
-        await client.send_message(message.channel, '젠젠젠젠젠젠젠젠젠젠젠...젠젠..젠젠')
 
     if message.content.startswith('뤼-나옴'):
         embed = discord.Embed(title="나옴", description="", color=0xFF0000)
         embed.set_footer(text = "으으읔...나옴 엌ㅋㅋㅋ")
         embed.set_image(url="https://yt3.ggpht.com/a-/AAuE7mDQWNSoEqqbjfa9cQgLcOVOk4ChfrPSst8VSQ=s288-mo-c-c0xffffffff-rj-k-no")
+        await client.send_message(message.channel, embed=embed)
+
+    if message.content.startswith('뤼-오빠워치'):
+        embed = discord.Embed(title="오빠워치", description="", color=0xFF0000)
+        embed.set_footer(text = "ㅗ빠워치")
+        embed.set_image(url="https://cdn.discordapp.com/attachments/557926896374120458/568015688648884234/JPEG_20190402_011627.jpg")
         await client.send_message(message.channel, embed=embed)
 
     if message.content.startswith('뤼-취향'):
@@ -268,6 +266,21 @@ async def on_message(message):
 
     if message.content.startswith('뤼-엔딩'):
         await client.send_message(message.channel, '함께해서 즐거웠고 다시 만나지 말자 하하ㅏ하하하하하ㅏㅎ')
+
+    if message.content.startswith('뤼-만가설'):
+        await client.send_message(message.channel, '몰라.')
+
+    if message.content.startswith('뤼-명박'):
+        await client.send_message(message.channel, '여러분 이거 다 싸이~!')
+
+    if message.content.startswith('뤼-중딱'):
+        await client.send_message(message.channel, '신나는 노?래~')
+
+    if message.content.startswith('뤼-은뱅이'):
+        embed = discord.Embed(title="은뱅이", description="", color=0xFF0000)
+        embed.set_footer(text = "골뱅이 먹고 싶다.")
+        embed.set_image(url="https://yt3.ggpht.com/a-/AAuE7mB_IB06eNN0piBdAfAYUxHslpKE1TNcV0MLLg=s288-mo-c-c0xffffffff-rj-k-no")
+        await client.send_message(message.channel, embed=embed)
 
 
 
