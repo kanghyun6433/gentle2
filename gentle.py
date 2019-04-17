@@ -194,14 +194,8 @@ async def on_message(message):
     if message.content.startswith('뤼-아버지'):
         await client.send_message(message.channel, '너무 살아오셧네~')
 
-    if message.content.startswith('뤼-아버지'):
-        await client.send_message(message.channel, '너무 살아오셧네~')
-
-    if message.content.startswith('뤼-아버지'):
-        await client.send_message(message.channel, '너무 살아오셧네~')
-
-    if message.content.startswith('뤼-아'):
-        await client.send_message(message.channel, '나왔어난~')
+    if message.content.startswith('뤼-아나'):
+        await client.send_message(message.channel, '왔어난~')
 
     if message.content.startswith('뤼-마감'):
         await client.send_message(message.channel, 'https://cdn.discordapp.com/attachments/566809829507858477/567991610202390528/1174e574b96cffa3.PNG')
