@@ -177,6 +177,12 @@ async def on_message(message):
         embed.set_image(url="https://cdn.discordapp.com/attachments/557926896374120458/568015688648884234/JPEG_20190402_011627.jpg")
         await client.send_message(message.channel, embed=embed)
 
+    if message.content.startswith('뤼-한'):
+        embed = discord.Embed(title="한", description="", color=0xFF0000)
+        embed.set_footer(text = "남")
+        embed.set_image(url="https://yt3.ggpht.com/a-/AAuE7mD05BiG1apM0e2E2LS4DZxG9NzFltGLY_Fg6A=s288-mo-c-c0xffffffff-rj-k-no")
+        await client.send_message(message.channel, embed=embed)
+
     if message.content.startswith('뤼-취향'):
         await client.send_message(message.channel, '내취향은 레드존만 만드는 야수선배야!')
 
