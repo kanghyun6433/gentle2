@@ -23,7 +23,13 @@ async def on_message(message):
     if message.author.bot:
         return None
 
+@client.event
+async def on_member_join(member):
+    role = discord.utils.get(member.server.roles, name='Example ROle')
+    await client.add_roles(member, role)
+
         id = message.author.id
+
 
     if message.content.startswith('뤼-정보'):
         embed = discord.Embed(title="젠틀봇", description="옵빤 싸이ㅣㅣㅣ야!!", color=0x00ff00)
@@ -287,6 +293,17 @@ async def on_message(message):
         embed.set_footer(text = "골뱅이 먹고 싶다.")
         embed.set_image(url="https://yt3.ggpht.com/a-/AAuE7mB_IB06eNN0piBdAfAYUxHslpKE1TNcV0MLLg=s288-mo-c-c0xffffffff-rj-k-no")
         await client.send_message(message.channel, embed=embed)
+
+    if message.content.startswith('노'):
+        await client.send_message(message.channel, '노?신고합니다')
+
+    if message.content.startswith('뤼-역할추가'):
+        role = discord.utils.get(member.server.roles, name='Example ROle')
+        await client.add_roles(member, role)
+        
+
+
+    
 
 
 
