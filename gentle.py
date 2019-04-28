@@ -23,11 +23,6 @@ async def on_message(message):
     if message.author.bot:
         return None
 
-@client.event
-async def on_member_join(member):
-    role = discord.utils.get(member.server.roles, name='Example ROle')
-    await client.add_roles(member, role)
-
         id = message.author.id
 
 
@@ -296,15 +291,6 @@ async def on_member_join(member):
 
     if message.content.startswith('노'):
         await client.send_message(message.channel, '노?신고합니다')
-
-    if message.content.startswith('뤼-역할추가'):
-        role = discord.utils.get(member.server.roles, name='Example ROle')
-        await client.add_roles(member, role)
-        
-
-
-    
-
 
 
 
