@@ -3,6 +3,12 @@ import asyncio
 import datetime
 from requests import *
 import random
+import urllib
+import bs4
+import time
+
+
+
 
  
 client = discord.Client()
@@ -17,7 +23,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
- 
+
 @client.event
 async def on_message(message):
     if message.author.bot:
@@ -290,15 +296,54 @@ async def on_message(message):
         await client.send_message(message.channel, embed=embed)
 
     if message.content.startswith('노'):
-        await client.send_message(message.channel, '노?신고합니다')
+        await client.send_message(message.channel, '노?신고ㅅㄱ')
+
+    if message.content.startswith('뤼-사다리타기'):
+        team = message.content[7:]
+        peopleteam = team.split(",")
+        people = peopleteam[0]
+        team = peopleteam[1]
+        person = people.split(" ")
+        teamname = team.split(" ")
+        random.shuffle(teamname)
+        for i in range(0, len(person)):
+            await client.send_message(message.channel, person[i] + "-------->" + teamname[i])
+
+    if message.content.startswith('뤼-역할'):
+        role = ""
+        rolename = message.content.split(" ")
+        member = discord.utils.get(client.get_all_members(), id=rolename[1])
+        for i in message.server.roles:
+            if i.name == rolename[2]:
+                role = i
+                break
+        await client.add_roles(member, role)
+
+    if message.content.startswith('뤼-실시간검색어') or message.content.startswith('뤼-실검'):
+        url = "https://www.naver.com/"
+        html = urllib.request.urlopen(url)
+
+        bsObj = bs4.BeautifulSoup(html, "html.parser")
+        realTimeSerach1 = bsObj.find('div', {'class': 'ah_roll_area PM_CL_realtimeKeyword_rolling'})
+        realTimeSerach2 = realTimeSerach1.find('ul', {'class': 'ah_l'})
+        realTimeSerach3 = realTimeSerach2.find_all('li')
 
 
+        embed = discord.Embed(
+            title='네이버 실시간 검색어',
+            description='실시간검색어',
+            colour=discord.Colour.green()
+        )
+        for i in range(0,20):
+            realTimeSerach4 = realTimeSerach3[i]
+            realTimeSerach5 = realTimeSerach4.find('span', {'class': 'ah_k'})
+            realTimeSerach = realTimeSerach5.text.replace(' ', '')
+            realURL = 'https://search.naver.com/search.naver?ie=utf8&query='+realTimeSerach
+            print(realTimeSerach)
+            embed.add_field(name=str(i+1)+'위', value='\n'+'[%s](<%s>)' % (realTimeSerach, realURL), inline=False) # [텍스트](<링크>) 형식으로 적으면 텍스트 하이퍼링크 만들어집니다
 
+        await client.send_message(message.channel, embed=embed)
 
     
+client.run('NTY2NDIyMjUzODI3MzkxNDk4.XM72Bg.S93Occ-PFJvWdXukFAxvhJBqy3M')
 
-
-    
-
-
-client.run('NTY2NDIyMjUzODI3MzkxNDk4.XLGnqg.SDAg3rSv7HPAkfrqE8LlqSiNrto')
